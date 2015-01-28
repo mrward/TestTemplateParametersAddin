@@ -9,7 +9,11 @@
 		<LanguageName>C#</LanguageName>
 		<_Description>Creates an C# library project.</_Description>
 	</TemplateConfiguration>
-	
+
+	<Actions>
+		<Open filename = "TemplateTest.cs"/>
+	</Actions>
+
 	<Combine name = "${ProjectName}" directory = ".">
 		<Options>
 			<StartupProject>${ProjectName}</StartupProject>
