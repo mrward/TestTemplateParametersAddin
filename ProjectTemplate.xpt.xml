@@ -1,0 +1,52 @@
+﻿<?xml version="1.0"?>
+<Template>
+	<TemplateConfiguration>
+		<_Name>Test Template Parameters App</_Name>
+		<Category>test/template/general</Category>
+		<Icon>md-project-library</Icon>
+		<Image id="md-library-project" />
+		<Wizard>TestTemplateParametersAddin.ProjectTemplateWizard</Wizard>
+		<LanguageName>C#</LanguageName>
+		<_Description>Creates an C# library project.</_Description>
+	</TemplateConfiguration>
+	
+	<Combine name = "${ProjectName}" directory = ".">
+		<Options>
+			<StartupProject>${ProjectName}</StartupProject>
+		</Options>
+		
+		<Project name = "${ProjectName}" directory = ".">
+			<Options Target = "Library" PauseConsoleOutput = "False" />
+			<References>
+				<Reference type="Package" refto="System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+			</References>
+			<Files>
+				<FileTemplateReference TemplateID="EmptyClass" name="MyClass.cs" />
+				<File name = "TemplateTest.cs" AddStandardHeader="False"><![CDATA[
+using System;
+$if$ ($AddSystemXml$ == true)using System.Xml;
+using System.Xml.Linq;
+$else$using System.Linq;
+$endif$using System.Text;
+
+namespace ${Namespace}
+{
+	public class ${Name}
+	{
+		public ${Name} ()
+		{
+		}
+$if$ ($AddToStringMethod$ == true)
+
+		public override string ToString ()
+		{
+			return "${Name}";
+		}$endif$
+	}
+}
+]]></File>
+				<FileTemplateReference TemplateID="CSharpAssemblyInfo" name="AssemblyInfo.cs" />
+			</Files>
+		</Project>
+	</Combine>
+</Template>

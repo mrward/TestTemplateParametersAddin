@@ -1,0 +1,35 @@
+﻿<Addin name        = "Test Template Parameters"
+       id          = "Test.TestTemplateParameters"
+       namespace   = "MonoDevelop"
+       author      = "Matt Ward"
+       copyright   = "MIT"
+       url         = "https://github.com/mrward"
+       description = "Test addin"
+       category    = "IDE extensions"
+       version     = "0.1">
+	
+	<Runtime>
+		<Import file="ProjectTemplate.xpt.xml" />
+	</Runtime>
+
+	<Dependencies>
+		<Addin id="Core" version="5.0"/>
+		<Addin id="Ide" version="5.0"/>
+	</Dependencies>
+	
+	<Extension path="/MonoDevelop/Ide/ProjectTemplates">
+		<ProjectTemplate id="TestTemplateParameters-Project" file="ProjectTemplate.xpt.xml" />
+	</Extension>
+
+	<Extension path="/MonoDevelop/Ide/ProjectTemplateCategories">
+		<Category id="test" name="Test" icon="md-platform-cross-platform" insertafter="other">
+			<Category id="template" name="Templates">
+				<Category id="general" name="General" />
+			</Category>
+		</Category>
+	</Extension>
+
+	<Extension path="/MonoDevelop/Ide/ProjectTemplateWizards">
+		<Class id="TestTemplateParametersAddin.ProjectTemplateWizard" class="TestTemplateParametersAddin.ProjectTemplateWizard" />
+	</Extension>
+</Addin>
