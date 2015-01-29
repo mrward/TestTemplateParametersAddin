@@ -23,6 +23,9 @@
 			<Options Target = "Library" PauseConsoleOutput = "False" />
 			<References>
 				<Reference type="Package" refto="System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+				<Reference type="Package" refto="System.Xml" if="AddSystemXml" />
+				<Reference type="Package" refto="System.Xml.Linq" if="AddSystemXml" />
+				<Reference type="Package" refto="System.Net" if="!AddSystemXml" />
 			</References>
 			<Files>
 				<File name = "TemplateTest.cs" AddStandardHeader="False"><![CDATA[
@@ -59,9 +62,8 @@ namespace ${Namespace}
 	}
 }
 ]]></File>
-			<!---<File name = "AddSystemXmlIsFalse.cs" if="!AddSystemXml" AddStandardHeader="False"><![CDATA[
+			<File name = "AddSystemXmlIsFalse.cs" if="!AddSystemXml" AddStandardHeader="False"><![CDATA[
 using System;
-using System.Xml;
 
 namespace ${Namespace}
 {
@@ -70,7 +72,7 @@ namespace ${Namespace}
 	{
 	}
 }
-]]></File>-->
+]]></File>
 				<FileTemplateReference TemplateID="CSharpAssemblyInfo" if="CreateAssemblyInfo" name="AssemblyInfo.cs" />
 			</Files>
 			<Resources>
