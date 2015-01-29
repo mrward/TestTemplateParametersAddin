@@ -47,8 +47,38 @@ $if$ ($AddToStringMethod$ == true)
 $endif$	}
 }
 ]]></File>
+				<File name = "AddSystemXmlIsTrue.cs" if="AddSystemXml" AddStandardHeader="False" ><![CDATA[
+using System;
+using System.Xml;
+
+namespace ${Namespace}
+{
+	// Should not be created if AddSystemXml is false.
+	public class AddSystemXmlIsTrue
+	{
+	}
+}
+]]></File>
+			<!---<File name = "AddSystemXmlIsFalse.cs" if="!AddSystemXml" AddStandardHeader="False"><![CDATA[
+using System;
+using System.Xml;
+
+namespace ${Namespace}
+{
+	// Should be created if AddSystemXml is false.
+	public class AddSystemXmlIsFalse
+	{
+	}
+}
+]]></File>-->
 				<FileTemplateReference TemplateID="CSharpAssemblyInfo" name="AssemblyInfo.cs" />
 			</Files>
+			<Resources>
+				<File name = "AddSystemXmlIsTrueEmbeddedResource.cs" if="AddSystemXml" AddStandardHeader="False" ><![CDATA[
+// Should not be created if AddSystemXml is false.
+// Build action should be Embedded resource
+]]></File>
+			</Resources>
 		</Project>
 	</Combine>
 </Template>
