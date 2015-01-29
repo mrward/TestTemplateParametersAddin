@@ -71,7 +71,7 @@ namespace ${Namespace}
 	}
 }
 ]]></File>-->
-				<FileTemplateReference TemplateID="CSharpAssemblyInfo" name="AssemblyInfo.cs" />
+				<FileTemplateReference TemplateID="CSharpAssemblyInfo" if="CreateAssemblyInfo" name="AssemblyInfo.cs" />
 			</Files>
 			<Resources>
 				<File name = "AddSystemXmlIsTrueEmbeddedResource.cs" if="AddSystemXml" AddStandardHeader="False" ><![CDATA[

@@ -36,6 +36,8 @@ namespace TestTemplateParametersAddin
 		public GtkProjectConfigurationWidget()
 		{
 			this.Build ();
+			parametersTextView.Buffer.Text =
+				"AddSystemXml=True\nAddToStringMethod=False\nCreateAssemblyInfo=true\n";
 			parametersTextView.Buffer.Changed += TextBufferChanged;
 		}
 
