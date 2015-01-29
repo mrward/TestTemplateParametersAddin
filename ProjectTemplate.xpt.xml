@@ -28,28 +28,7 @@
 				<Reference type="Package" refto="System.Net" if="!AddSystemXml" />
 			</References>
 			<Files>
-				<File name = "TemplateTest.cs" AddStandardHeader="False"><![CDATA[
-using System;
-$if$ ($AddSystemXml$ == true)using System.Xml;
-using System.Xml.Linq;
-$else$using System.Linq;
-$endif$using System.Text;
-
-namespace ${Namespace}
-{
-	public class ${Name}
-	{
-		public ${Name} ()
-		{
-		}
-$if$ ($AddToStringMethod$ == true)
-		public override string ToString ()
-		{
-			return "${Name}";
-		}
-$endif$	}
-}
-]]></File>
+				<File name="TemplateTest.cs" AddStandardHeader="False" src="TemplateTest.cs" />
 				<File name = "AddSystemXmlIsTrue.cs" if="AddSystemXml" AddStandardHeader="False" ><![CDATA[
 using System;
 using System.Xml;

@@ -10,6 +10,7 @@
 	
 	<Runtime>
 		<Import file="ProjectTemplate.xpt.xml" />
+		<Import file="TemplateTest.cs" />
 	</Runtime>
 
 	<Dependencies>
