@@ -50,7 +50,7 @@ namespace TestTemplateParametersAddin
 		}
 
 		public override string Title {
-			get { return GettextCatalog.GetString ("Configure your Xamarin.Forms app"); }
+			get { return GettextCatalog.GetString ("Add your template parameters"); }
 		}
 
 		public void UpdateTemplateParameters (string text)
