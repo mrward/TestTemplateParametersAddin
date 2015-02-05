@@ -1,0 +1,3 @@
+﻿AddSystemXml=True
+AddToStringMethod=False
+CreateAssemblyInfo=true

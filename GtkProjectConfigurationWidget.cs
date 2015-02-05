@@ -25,6 +25,8 @@
 // THE SOFTWARE.
 //
 using System;
+using System.IO;
+using MonoDevelop.Core;
 
 namespace TestTemplateParametersAddin
 {
@@ -36,9 +38,24 @@ namespace TestTemplateParametersAddin
 		public GtkProjectConfigurationWidget()
 		{
 			this.Build ();
-			parametersTextView.Buffer.Text =
-				"AddSystemXml=True\nAddToStringMethod=False\nCreateAssemblyInfo=true\n";
+			parametersTextView.Buffer.Text = ReadParametersFromFile ();
 			parametersTextView.Buffer.Changed += TextBufferChanged;
+		}
+
+		string ReadParametersFromFile ()
+		{
+			try {
+				string directory = System.IO.Path.GetDirectoryName (GetType().Assembly.Location);
+				string fileName = System.IO.Path.Combine (directory, "Parameters.txt");
+				if (File.Exists (fileName)) {
+					return File.ReadAllText (fileName);
+				} else {
+					LoggingService.LogError ("Cannot find Parameters.txt");
+				}
+			} catch (Exception ex) {
+				LoggingService.LogInternalError (ex);
+			}
+			return String.Empty;
 		}
 
 		void TextBufferChanged (object sender, EventArgs e)

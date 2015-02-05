@@ -6,11 +6,12 @@
        url         = "https://github.com/mrward"
        description = "Test addin"
        category    = "IDE extensions"
-       version     = "0.1">
+       version     = "0.2">
 	
 	<Runtime>
 		<Import file="ProjectTemplate.xpt.xml" />
 		<Import file="TemplateTest.cs" />
+		<Import file="Parameters.txt" />
 	</Runtime>
 
 	<Dependencies>
