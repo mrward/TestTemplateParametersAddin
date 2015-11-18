@@ -4,9 +4,9 @@
        author      = "Matt Ward"
        copyright   = "MIT"
        url         = "https://github.com/mrward"
-       description = "Test addin"
+       description = "Test addin (roslyn)"
        category    = "IDE extensions"
-       version     = "0.2">
+       version     = "0.3">
 	
 	<Runtime>
 		<Import file="ProjectTemplate.xpt.xml" />
@@ -15,8 +15,8 @@
 	</Runtime>
 
 	<Dependencies>
-		<Addin id="Core" version="5.0"/>
-		<Addin id="Ide" version="5.0"/>
+		<Addin id="Core" version="6.0"/>
+		<Addin id="Ide" version="6.0"/>
 	</Dependencies>
 	
 	<Extension path="/MonoDevelop/Ide/ProjectTemplates">
