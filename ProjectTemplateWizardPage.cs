@@ -40,7 +40,7 @@ namespace TestTemplateParametersAddin
 			this.wizard = wizard;
 		}
 
-		protected override object CreateNativeWidget ()
+		protected override object CreateNativeWidget<T> ()
 		{
 			if (view == null) {
 				view = new GtkProjectConfigurationWidget ();
