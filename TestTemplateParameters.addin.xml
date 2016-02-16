@@ -6,7 +6,7 @@
        url         = "https://github.com/mrward"
        description = "Test addin (roslyn)"
        category    = "IDE extensions"
-       version     = "0.3">
+       version     = "0.4">
 	
 	<Runtime>
 		<Import file="ProjectTemplate.xpt.xml" />
@@ -24,7 +24,7 @@
 	</Extension>
 
 	<Extension path="/MonoDevelop/Ide/ProjectTemplateCategories">
-		<Category id="test" name="Test" icon="md-platform-cross-platform" insertafter="other">
+		<Category id="test" name="Test" icon="md-platform-crossplatform" insertafter="other">
 			<Category id="template" name="Templates">
 				<Category id="general" name="General" />
 			</Category>
